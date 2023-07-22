@@ -14,7 +14,7 @@ export class AuthService {
   private readonly helper: AuthHelper;
 
   public async register(body: RegisterDto): Promise<User | never> {
-    const { name, email, password, birthdate, mbti }: RegisterDto = body;
+    const { nickname, email, password, birthdate, mbti }: RegisterDto = body;
     let user: User = await this.repository.findOne({ where: { email } });
 
     if (user) {
@@ -23,7 +23,7 @@ export class AuthService {
 
     user = new User();
 
-    user.name = name;
+    user.nickname = nickname;
     user.email = email;
     user.password = this.helper.encodePassword(password);
     user.birthdate = birthdate;

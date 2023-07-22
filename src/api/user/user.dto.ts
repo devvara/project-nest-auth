@@ -1,7 +1,7 @@
 import { IsOptional, IsString } from "class-validator";
 
-export class UpdateNameDto {
+export class UpdateNicknameDto {
   @IsString()
   @IsOptional()
-  public readonly name?: string;
+  public readonly nickname?: string;
 }

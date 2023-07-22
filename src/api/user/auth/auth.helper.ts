@@ -25,7 +25,7 @@ export class AuthHelper {
   }
 
   public generateToken(user: User): string {
-    return this.jwt.sign({ id: user.id, email: user.email, name: user.name, birthdate: user.birthdate, mbti: user.mbti });
+    return this.jwt.sign({ id: user.id, email: user.email, nickname: user.nickname, birthdate: user.birthdate, mbti: user.mbti });
   }
 
   public isPasswordValid(password: string, userPassword: string): boolean {

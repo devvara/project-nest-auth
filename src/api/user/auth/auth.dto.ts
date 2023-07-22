@@ -13,7 +13,7 @@ export class RegisterDto {
 
   @Trim()
   @IsString()
-  public name: string;
+  public nickname: string;
 
   @IsNotEmpty()
   @IsString()
