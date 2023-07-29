@@ -1,5 +1,11 @@
 import { Trim } from 'class-sanitizer';
-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  MinLength,
+} from 'class-validator';
 
 export class RegisterDto {
   @IsNotEmpty()
@@ -12,13 +18,15 @@ export class RegisterDto {
   public password: string;
 
   @Trim()
+  @IsNotEmpty()
   @IsString()
   public nickname: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  public mbti: string;  
+  public mbti: string;
 
+  @IsOptional()
   @IsString()
   public birthdate: string;
 }
